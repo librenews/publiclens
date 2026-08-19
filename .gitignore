@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+data/audio/
+data/transcripts/
+data/summaries/
+data/index/
+data/meeting_*.json
+venv/
+.venv/
+.DS_Store

@@ -1,0 +1,157 @@
+"""
+PublicLens Chat Server
+
+Flask app that serves the chat UI and provides API endpoints
+for meeting data and chat interactions. Supports multiple boards
+and meetings.
+"""
+
+import json
+import os
+import sys
+from pathlib import Path
+
+from flask import Flask, jsonify, request, send_from_directory
+from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Add parent to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from server.rag import chat, load_meeting_data
+from pipeline.boards import BOARDS, get_board_by_view_id
+
+app = Flask(__name__, static_folder="static")
+CORS(app)
+
+DATA_DIR = Path(__file__).parent.parent / "data"
+
+
+@app.route("/")
+def index():
+    """Serve the chat UI."""
+    return send_from_directory(app.static_folder, "index.html")
+
+
+@app.route("/api/boards")
+def get_boards():
+    """Return list of boards with their processed meeting counts."""
+    boards = []
+    for name, info in BOARDS.items():
+        # Count how many meetings from this board are processed
+        processed = 0
+        for meta_file in DATA_DIR.glob("meeting_*.json"):
+            with open(meta_file) as f:
+                m = json.load(f)
+            if m.get("view_id") == info["view_id"]:
+                clip_id = m.get("clip_id", "")
+                if (DATA_DIR / "index" / f"{clip_id}.faiss").exists():
+                    processed += 1
+
+        if processed > 0:
+            boards.append({
+                "name": name,
+                "short_name": info["short_name"],
+                "view_id": info["view_id"],
+                "color": info["color"],
+                "processed_count": processed,
+            })
+
+    return jsonify(boards)
+
+
+@app.route("/api/meeting")
+def get_meeting():
+    """Return meeting metadata and summary for a specific clip_id."""
+    clip_id = request.args.get("clip_id")
+    if not clip_id:
+        return jsonify({"error": "No clip_id specified"}), 400
+
+    data = load_meeting_data(clip_id)
+    return jsonify(data)
+
+
+@app.route("/api/meetings")
+def list_meetings():
+    """List all processed meetings, optionally filtered by view_id."""
+    view_id_filter = request.args.get("view_id")
+    meetings = []
+
+    for meta_file in sorted(DATA_DIR.glob("meeting_*.json"), reverse=True):
+        with open(meta_file) as f:
+            meeting = json.load(f)
+
+        # Filter by view_id if specified
+        if view_id_filter and meeting.get("view_id") != view_id_filter:
+            continue
+
+        clip_id = meeting.get("clip_id", meta_file.stem.replace("meeting_", ""))
+
+        # Check what data is available
+        has_transcript = (DATA_DIR / "transcripts" / f"{clip_id}.json").exists()
+        has_summary = (DATA_DIR / "summaries" / f"{clip_id}.json").exists()
+        has_index = (DATA_DIR / "index" / f"{clip_id}.faiss").exists()
+
+        ready = has_transcript and has_summary and has_index
+        if not ready:
+            continue
+
+        # Get board info
+        board_info = get_board_by_view_id(meeting.get("view_id", ""))
+
+        meetings.append({
+            **meeting,
+            "has_transcript": has_transcript,
+            "has_summary": has_summary,
+            "has_index": has_index,
+            "ready": ready,
+            "board_name": board_info["name"] if board_info else "Unknown",
+            "board_short_name": board_info["short_name"] if board_info else "?",
+            "board_color": board_info["color"] if board_info else "#666",
+        })
+
+    # Sort by date_unix descending (newest first)
+    meetings.sort(key=lambda m: m.get("date_unix") or 0, reverse=True)
+
+    return jsonify(meetings)
+
+
+@app.route("/api/chat", methods=["POST"])
+def chat_endpoint():
+    """Handle a chat message."""
+    body = request.get_json()
+
+    if not body or "message" not in body:
+        return jsonify({"error": "Missing 'message' in request body"}), 400
+
+    clip_id = body.get("clip_id")
+    if not clip_id:
+        return jsonify({"error": "No clip_id specified"}), 400
+
+    question = body["message"]
+    history = body.get("history", [])
+
+    try:
+        result = chat(
+            question=question,
+            clip_id=clip_id,
+            conversation_history=history,
+        )
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="PublicLens Chat Server")
+    parser.add_argument("--port", type=int, default=5001, help="Server port (default: 5001)")
+    parser.add_argument("--debug", action="store_true", help="Enable debug mode")
+
+    args = parser.parse_args()
+
+    print(f"[server] Starting PublicLens on http://localhost:{args.port}")
+    app.run(host="0.0.0.0", port=args.port, debug=args.debug)
