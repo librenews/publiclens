@@ -1,0 +1,55 @@
+{
+  "executive_summary": "The municipal government meeting on July 6, 2026, primarily focused on the recognition of Detective John McClafferty for his exceptional work in a complex fentanyl overdose case. The meeting also covered personnel updates, including retirements and administrative operations, and addressed community concerns about ICE activities. A proposal for a collaborative book bag giveaway was discussed to prevent duplication of efforts. The meeting concluded with plans for future meetings and an emphasis on managing vacation time effectively.",
+  "key_topics": [
+    {
+      "topic": "Recognition of Detective John McClafferty",
+      "summary": "Detective McClafferty was commended for his investigative work that led to the federal prosecution of a narcotics trafficker responsible for multiple fatal overdoses.",
+      "timestamp_start": 60
+    },
+    {
+      "topic": "Personnel Updates",
+      "summary": "Discussion on retirements, including Officer Draco Sibry, and ongoing investigations within the department.",
+      "timestamp_start": 1800
+    },
+    {
+      "topic": "Community Concerns about ICE",
+      "summary": "Concerns were raised about ICE activities in the community, causing anxiety among residents.",
+      "timestamp_start": 3600
+    },
+    {
+      "topic": "Book Bag Giveaway Proposal",
+      "summary": "A proposal was made to consolidate book bag giveaways to prevent individuals from collecting multiple bags and selling them.",
+      "timestamp_start": 4500
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Acceptance of meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Coordinate with Lieutenant Jones on book bag giveaway",
+      "responsible_party": "Commissioners",
+      "deadline": null
+    },
+    {
+      "item": "Follow up on legal counsel regarding promotions",
+      "responsible_party": "Chairman",
+      "deadline": "End of the day following the meeting"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "If it wasn't for John, I'm sure this guy would still be out there killing other people.",
+      "speaker": "Sgt. Sean Bolling",
+      "context": "Commending Detective McClafferty's work on the overdose case"
+    }
+  ],
+  "meeting_name": "July 6, 2026",
+  "meeting_date": "Jul  8, 2026",
+  "clip_id": "16095"
+}

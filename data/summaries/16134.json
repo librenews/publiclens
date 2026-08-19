@@ -1,0 +1,60 @@
+{
+  "executive_summary": "The Planning Board Special Meeting on July 23, 2026, primarily focused on the approval of supplemental capital project appropriation requests for the Yearwood Center renovations. The board discussed the need for additional funding due to the discovery of asbestos and the necessity to vacate the building, which disrupted community services. The meeting also addressed the closeout of various capital projects to reallocate unused ARP funds to the Yearwood Center project. The board approved the funding reallocation and the closeout of several projects to support the renovations.",
+  "key_topics": [
+    {
+      "topic": "Approval of June 23, 2026 Meeting Minutes",
+      "summary": "The board confirmed a quorum and approved the minutes from the previous meeting without amendments.",
+      "timestamp_start": 0
+    },
+    {
+      "topic": "Yearwood Center Renovations Funding",
+      "summary": "The board discussed the need for additional funds for the Yearwood Center renovations due to asbestos issues and the need to vacate the building. The funding sources include ARP funds, disaster recovery proceeds, and private contributions.",
+      "timestamp_start": 180
+    },
+    {
+      "topic": "Capital Closeout Recommendations",
+      "summary": "The board reviewed and approved the closeout of several capital projects, reallocating unused ARP funds to the Yearwood Center project.",
+      "timestamp_start": 3600
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of June 23, 2026 Meeting Minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of supplemental capital project appropriation requests for Yearwood Center renovations",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of capital project closeouts",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Reallocate unused ARP funds from closed projects to Yearwood Center renovations",
+      "responsible_party": "Planning Board and relevant city departments",
+      "deadline": "As soon as possible"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "The displacement of the Boys and Girls Club and the subtenants of the building is a major disruption to the community.",
+      "speaker": "Jennifer",
+      "context": "Explaining the urgency of the Yearwood Center renovations"
+    },
+    {
+      "quote": "We are increasing the authorization today by $2.2 million, and that's where we're seeking your approval.",
+      "speaker": "Tony",
+      "context": "Clarifying the funding request for the Yearwood Center project"
+    }
+  ],
+  "meeting_name": "Planning Board Special Meeting",
+  "meeting_date": "Jul 23, 2026",
+  "clip_id": "16134"
+}

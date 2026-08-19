@@ -1,0 +1,55 @@
+{
+  "executive_summary": "The WPCA Finance Committee meeting on February 27, 2026, primarily focused on reviewing financial performance, discussing capital projects, and addressing budget concerns. Key topics included sewer revenue collection, capital expenditure increases, and the impact of infiltration and inflow remediation on system capacity. The committee also discussed the need for better communication of financial data in terms of budget percentages to provide clearer insights. Several action items were identified, including the need to incorporate budget comparisons into financial reports and to further analyze the impact of remediation projects.",
+  "key_topics": [
+    {
+      "topic": "Review of October 20th Finance Committee Meeting Minutes",
+      "summary": "The committee reviewed and approved the minutes from the previous meeting.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Sewer Revenue Collection",
+      "summary": "Discussion on revenue collection rates and historical comparisons, noting a shortfall compared to the previous year.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Capital Expenditure Increases",
+      "summary": "The committee discussed increases in capital expenditures for fiscal year 2026, including new projects and increased spending on sewer rehabilitation.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Infiltration and Inflow Remediation",
+      "summary": "Discussion on the impact of remediation projects on system capacity and the challenges in measuring their effectiveness.",
+      "timestamp_start": null
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of October 20th Finance Committee Meeting Minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Incorporate budget comparisons into financial reports",
+      "responsible_party": "Kimberly",
+      "deadline": null
+    },
+    {
+      "item": "Analyze the impact of infiltration and inflow remediation on system capacity",
+      "responsible_party": "Bill",
+      "deadline": null
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "We can't afford to allow an excursion into Long Island Sound.",
+      "speaker": "Unnamed Committee Member",
+      "context": "Discussing the importance of infiltration and inflow remediation to prevent environmental disasters."
+    }
+  ],
+  "meeting_name": "WPCA Finance Committee Meeting 11.17.25",
+  "meeting_date": "Feb 27, 2026",
+  "clip_id": "15742"
+}

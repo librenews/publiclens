@@ -1,0 +1,54 @@
+{
+  "executive_summary": "The Health Commission Monthly Board Meeting on November 13, 2025, focused on various public health initiatives and updates from the health department. Key topics included reports on recent public health conferences, ongoing grant applications, and the implementation of new surveillance systems for opioid tracking. The meeting also covered updates on the Welcome Center's activities and preparations for upcoming accreditation processes. Discussions highlighted the importance of data-driven decision-making and community partnerships in addressing health challenges.",
+  "key_topics": [
+    {
+      "topic": "Public Health Conference Report",
+      "summary": "Jodi reported on her attendance at the American Public Health Association meeting, highlighting discussions on air quality monitoring and the use of AI in public health.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Grant Applications",
+      "summary": "The department is awaiting contracts for federal grants focused on opioid misuse prevention and gun violence prevention.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Welcome Center Update",
+      "summary": "Ashley provided updates on the Welcome Center's activities, including distribution of jackets and turkeys to families in need.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Accreditation Preparation",
+      "summary": "Plans for the upcoming accreditation site visit were discussed, including virtual and on-site evaluations.",
+      "timestamp_start": null
+    }
+  ],
+  "decisions_and_votes": [],
+  "action_items": [
+    {
+      "item": "Prepare for accreditation site visit",
+      "responsible_party": "Health Department Staff",
+      "deadline": "December 11, 2025"
+    },
+    {
+      "item": "Determine meeting schedule for December 11",
+      "responsible_party": "Lorraine",
+      "deadline": null
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "Every single department in the city comes back to the health department.",
+      "speaker": "Lorraine",
+      "context": "Emphasizing the interconnectedness of city departments with the health department."
+    },
+    {
+      "quote": "We want to make sure people have their tools to be able to respond.",
+      "speaker": "Jodi",
+      "context": "Discussing the importance of training for suicide prevention."
+    }
+  ],
+  "meeting_name": "Health Commission Monthly Board Meeting",
+  "meeting_date": "Nov 13, 2025",
+  "clip_id": "15637"
+}

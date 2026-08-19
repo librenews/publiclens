@@ -1,0 +1,60 @@
+{
+  "executive_summary": "The 2025 Social Services Commission Meeting focused primarily on a hearing regarding a tenant's complaint about living conditions and rent increase at Bedford Hall Apartments. The tenant, Brooke, raised issues about noise from nearby construction, parking difficulties, and malfunctioning amenities. The commission deliberated on whether to approve a rent increase while considering the tenant's grievances. Ultimately, the commission decided to approve the rent increase with certain concessions regarding parking and lease terms.",
+  "key_topics": [
+    {
+      "topic": "Introduction of Commissioners and Attendees",
+      "summary": "Commissioners and attendees, including an attorney and property managers, introduced themselves.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Tenant's Complaint Presentation",
+      "summary": "Brooke, the tenant, presented her complaints about noise, parking issues, and malfunctioning amenities at Bedford Hall Apartments.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Property Management's Response",
+      "summary": "Marjorie, representing the property management, responded to the tenant's complaints, addressing each issue and explaining the rent structure.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Commission Deliberation",
+      "summary": "The commission discussed the tenant's complaints, the property management's response, and the proposed rent increase.",
+      "timestamp_start": null
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of rent increase to $2550 with parking concessions",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Draft a new lease starting January 1, 2026, with the approved terms",
+      "responsible_party": "Property Management",
+      "deadline": "Before January 1, 2026"
+    },
+    {
+      "item": "Provide tenant with option for reserved parking at $85",
+      "responsible_party": "Property Management",
+      "deadline": "Before January 1, 2026"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "I believe what I pay at the 2445 is a fair rent considering all of the things that I've been through living in this complex and in this unit.",
+      "speaker": "Brooke",
+      "context": "During her closing argument, Brooke expressed her view on the rent increase."
+    },
+    {
+      "quote": "Every issue that has been brought to my attention has been handled.",
+      "speaker": "Marjorie",
+      "context": "Marjorie, the property manager, assured the commission that tenant complaints were addressed."
+    }
+  ],
+  "meeting_name": "2025 Social Services Commission Meeting & Hearing-20251203",
+  "meeting_date": "Dec  3, 2025",
+  "clip_id": "15579"
+}

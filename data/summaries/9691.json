@@ -1,0 +1,66 @@
+{
+  "executive_summary": "The Terry Connors Rink Committee meeting focused on the future operations and financial sustainability of the rink. Public comments were overwhelmingly in favor of keeping the rink as a municipal asset, emphasizing its importance to the community and the need for affordable access. The committee discussed the financial status of the rink, including recent rate increases and potential capital expenditures. The decision was made to approach the Board of Finance with updated financial information to seek guidance on maintaining the rink under city management.",
+  "key_topics": [
+    {
+      "topic": "Public Comment Session",
+      "summary": "Numerous community members expressed strong support for keeping Terry Connors Rink as a municipal facility, citing its affordability and community value.",
+      "timestamp_start": 300
+    },
+    {
+      "topic": "Financial Review of the Rink",
+      "summary": "The committee discussed the rink's financial status, noting that recent rate increases have helped stabilize the budget, but future capital expenditures remain a concern.",
+      "timestamp_start": 7200
+    },
+    {
+      "topic": "Next Steps for Rink Management",
+      "summary": "The committee decided to present updated financial data to the Board of Finance to explore options for keeping the rink under city management.",
+      "timestamp_start": 10800
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Move forward to present updated financial information to the Board of Finance",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Present updated financial data to the Board of Finance",
+      "responsible_party": "Laura Berwick",
+      "deadline": "Next available Board of Finance meeting"
+    }
+  ],
+  "public_comments": [
+    {
+      "speaker": "Pamela Foster",
+      "topic": "Importance of Terry Connors Rink",
+      "summary": "Emphasized the rink's role in providing affordable skating opportunities and urged against privatization."
+    },
+    {
+      "speaker": "Rosemary Danista",
+      "topic": "Community Impact",
+      "summary": "Highlighted the rink's importance for family activities and community support, opposing any moves that would limit access."
+    },
+    {
+      "speaker": "Jeanette Bilichnansky",
+      "topic": "RFP Concerns",
+      "summary": "Requested that any RFP include provisions to maintain current user access and suggested exploring non-profit management models."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "quote": "What I ask for this committee to consider is that Terry Connors is a service that the city of Stanford provides to its community.",
+      "speaker": "Pamela Foster",
+      "context": "During her public comment emphasizing the rink's community value."
+    },
+    {
+      "quote": "Selling this rink, shutting it down, or whatever opportunities there that will limit the opportunities to the community... would not be to the best service of this community.",
+      "speaker": "Rosemary Danista",
+      "context": "Expressing opposition to privatization during public comments."
+    }
+  ],
+  "meeting_name": "TCR Meeting",
+  "meeting_date": "Sep 22, 2020",
+  "clip_id": "9691"
+}

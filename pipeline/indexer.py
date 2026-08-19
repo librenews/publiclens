@@ -237,6 +237,101 @@ def search(query: str, clip_id: str, top_k: int = 5) -> list[dict]:
     return results
 
 
+def search_across_meetings(
+    query: str,
+    view_ids: Optional[list[str]] = None,
+    date_from: Optional[int] = None,
+    date_to: Optional[int] = None,
+    top_k: int = 10,
+) -> dict:
+    """
+    Search across all (or filtered) meeting indexes.
+
+    Embeds the query once, then iterates over per-meeting FAISS indexes,
+    merging results into a single ranked list.
+
+    Args:
+        query: Search query text
+        view_ids: Optional list of board view_ids to filter by
+        date_from: Optional unix timestamp — only include meetings on or after
+        date_to: Optional unix timestamp — only include meetings on or before
+        top_k: Number of total results to return
+
+    Returns:
+        Dict with 'results' list and 'meetings_searched' count
+    """
+    import json as _json
+
+    client = get_client()
+
+    # Embed query once (the expensive API call)
+    response = client.embeddings.create(
+        model=EMBED_MODEL,
+        input=[query],
+    )
+    query_embedding = np.array([response.data[0].embedding], dtype=np.float32)
+    faiss.normalize_L2(query_embedding)
+
+    all_results = []
+    meetings_searched = 0
+
+    for index_path in INDEX_DIR.glob("*.faiss"):
+        clip_id = index_path.stem
+        chunks_path = INDEX_DIR / f"{clip_id}_chunks.pkl"
+
+        if not chunks_path.exists():
+            continue
+
+        # Load meeting metadata for filtering
+        meta_path = DATA_DIR / f"meeting_{clip_id}.json"
+        meeting_meta = {}
+        if meta_path.exists():
+            with open(meta_path) as f:
+                meeting_meta = _json.load(f)
+
+        # Filter by board
+        if view_ids and meeting_meta.get("view_id") not in view_ids:
+            continue
+
+        # Filter by date range
+        date_unix = meeting_meta.get("date_unix")
+        if date_unix:
+            if date_from and date_unix < date_from:
+                continue
+            if date_to and date_unix > date_to:
+                continue
+
+        # Load index and search
+        index = faiss.read_index(str(index_path))
+        with open(chunks_path, "rb") as f:
+            chunks = pickle.load(f)
+
+        per_meeting_k = min(3, len(chunks))  # top 3 per meeting
+        scores, indices = index.search(query_embedding, per_meeting_k)
+
+        for score, idx in zip(scores[0], indices[0]):
+            if idx < 0:
+                continue
+            chunk = chunks[idx].copy()
+            chunk["score"] = float(score)
+            chunk["clip_id"] = clip_id
+            chunk["meeting_name"] = meeting_meta.get("name", f"Meeting {clip_id}")
+            chunk["meeting_date"] = meeting_meta.get("date", "Unknown")
+            chunk["date_unix"] = date_unix
+            chunk["view_id"] = meeting_meta.get("view_id", "")
+            all_results.append(chunk)
+
+        meetings_searched += 1
+
+    # Sort by score globally, return top_k
+    all_results.sort(key=lambda r: r["score"], reverse=True)
+
+    return {
+        "results": all_results[:top_k],
+        "meetings_searched": meetings_searched,
+    }
+
+
 def format_timestamp(seconds: Optional[float]) -> str:
     """Format seconds as HH:MM:SS."""
     if seconds is None:

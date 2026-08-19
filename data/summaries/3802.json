@@ -1,0 +1,70 @@
+{
+  "executive_summary": "The Animal Control Task Force meeting on April 14, 2015, focused on finalizing the draft ordinance for animal control and welfare in Stanford. Key discussions included policies on tethering, breeding permits, and vaccination requirements for animals. The task force aimed to complete its work for presentation to the mayor, with the goal of modernizing the city's animal control regulations.",
+  "key_topics": [
+    {
+      "topic": "Final Report and Ordinance Draft",
+      "summary": "The task force discussed the contents of the final report and draft ordinance, aiming to present it to the mayor soon.",
+      "timestamp_start": 60
+    },
+    {
+      "topic": "Animal Control Center Report",
+      "summary": "Tilford reported on the current status and activities of the animal control center, including adoption statistics and new programs.",
+      "timestamp_start": 600
+    },
+    {
+      "topic": "Tethering Regulations",
+      "summary": "The task force debated the enforceability and specifics of tethering regulations for dogs, including weather conditions and shelter requirements.",
+      "timestamp_start": 1800
+    },
+    {
+      "topic": "Breeding Permits",
+      "summary": "Discussion on the requirements for breeding permits, including annual inspections and conditions for different species.",
+      "timestamp_start": 7200
+    },
+    {
+      "topic": "Vaccination Requirements",
+      "summary": "The task force considered which vaccinations should be mandatory for stray, roaming, and feral cats.",
+      "timestamp_start": 5400
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Add shelter and water requirement to tethering regulations",
+      "outcome": "Agreed",
+      "vote_count": "Consensus"
+    },
+    {
+      "description": "Include annual inspection for breeding permits",
+      "outcome": "Agreed",
+      "vote_count": "Consensus"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Finalize and distribute the draft ordinance and final report",
+      "responsible_party": "Task Force Chair",
+      "deadline": "End of April"
+    },
+    {
+      "item": "Add language to ordinance regarding adoption events",
+      "responsible_party": "Task Force Chair",
+      "deadline": "Before final submission"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "This ordinance is so much better than anything we've ever had.",
+      "speaker": "Task Force Chair",
+      "context": "Discussing the improvements made in the draft ordinance"
+    },
+    {
+      "quote": "It's a good start. You just need that shelter.",
+      "speaker": "Marianne",
+      "context": "Commenting on the tethering regulations"
+    }
+  ],
+  "meeting_name": "Animal Control Task Force",
+  "meeting_date": "Apr 14, 2015",
+  "clip_id": "3802"
+}

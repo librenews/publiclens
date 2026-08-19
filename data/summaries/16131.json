@@ -1,0 +1,70 @@
+{
+  "executive_summary": "The Zoning Board of Appeals (ZBA) meeting on July 22, 2026, addressed several variance applications. The board discussed applications related to property modifications, including garage construction, home additions, and porch constructions. Key concerns included compliance with zoning regulations, neighborhood impact, and the necessity of proposed changes. The board voted on each application, with some approved and others denied without prejudice, allowing applicants to revise and resubmit their proposals.",
+  "key_topics": [
+    {
+      "topic": "98 Haviland Road Garage Construction",
+      "summary": "The board discussed a variance application to construct a two-car garage on an undersized flag lot, considering recent zoning changes affecting setbacks.",
+      "timestamp_start": 300
+    },
+    {
+      "topic": "21 Nichols Avenue Home Addition",
+      "summary": "The board reviewed a variance request for a home addition and deck, focusing on lot coverage and neighborhood impact, ultimately denying the application without prejudice.",
+      "timestamp_start": 1800
+    },
+    {
+      "topic": "15 Verplank Avenue Patio Roof",
+      "summary": "The board considered a variance to construct a covered roof over an existing patio, which was approved unanimously.",
+      "timestamp_start": 3600
+    },
+    {
+      "topic": "21 Crest Hill Place Front Porch",
+      "summary": "The board deliberated on a variance for constructing a front porch, which was approved unanimously.",
+      "timestamp_start": 4200
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Variance for 98 Haviland Road to construct a two-car garage",
+      "outcome": "Passed",
+      "vote_count": "Unanimous 4-0"
+    },
+    {
+      "description": "Variance for 21 Nichols Avenue for home addition and deck",
+      "outcome": "Denied without prejudice",
+      "vote_count": "3 denied, 1 in favor"
+    },
+    {
+      "description": "Variance for 15 Verplank Avenue to construct a covered roof over patio",
+      "outcome": "Passed",
+      "vote_count": "Unanimous 4-0"
+    },
+    {
+      "description": "Variance for 21 Crest Hill Place to construct a front porch",
+      "outcome": "Passed",
+      "vote_count": "Unanimous 4-0"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Research the subdivision approval process for 98 Haviland Road",
+      "responsible_party": "Kendall",
+      "deadline": null
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "The hardship is that the existing garage is really unusable for a two-car family.",
+      "speaker": "George",
+      "context": "Discussing the variance application for 98 Haviland Road"
+    },
+    {
+      "quote": "I don't see a hardship for the deck.",
+      "speaker": "Lauren",
+      "context": "Discussing the variance application for 21 Nichols Avenue"
+    }
+  ],
+  "meeting_name": "ZBA Regular Optional Meeting - July 22, 2026",
+  "meeting_date": "Jul 22, 2026",
+  "clip_id": "16131"
+}

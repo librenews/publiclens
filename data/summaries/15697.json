@@ -1,0 +1,39 @@
+{
+  "executive_summary": "The Tax Abatement Committee meeting held on January 7, 2026, was brief and focused on reviewing and approving the minutes from the previous meeting and the second half billing for tax abatement properties. The meeting was called to order shortly after 3:00 p.m. and concluded within a few minutes. All members confirmed receipt of the necessary documents via email, and there were no objections or amendments to the minutes or billing schedule. The meeting concluded with unanimous approval of both items discussed.",
+  "key_topics": [
+    {
+      "topic": "Approval of previous meeting minutes",
+      "summary": "The committee reviewed and approved the minutes from the July 2nd meeting without any changes.",
+      "timestamp_start": 180
+    },
+    {
+      "topic": "Second half billing for tax abatement properties",
+      "summary": "The committee discussed and approved the second half billing schedule for tax abatement properties.",
+      "timestamp_start": 240
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of the minutes from the July 2nd meeting",
+      "outcome": "Passed",
+      "vote_count": "unanimous"
+    },
+    {
+      "description": "Approval of the second half billing for tax abatement properties",
+      "outcome": "Passed",
+      "vote_count": "unanimous"
+    }
+  ],
+  "action_items": [],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "Thanks for giving me the hour back.",
+      "speaker": "Sue",
+      "context": "Comment made at the end of the meeting, highlighting its brevity."
+    }
+  ],
+  "meeting_name": "Tax Abate Cmte - 1/7/26",
+  "meeting_date": "Jan  7, 2026",
+  "clip_id": "15697"
+}

@@ -29,6 +29,49 @@
                 <p class="tagline">Government Meeting Intelligence</p>
             </div>
 
+            <!-- Search Bar -->
+            <div class="search-section" id="search-section">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search across meetings..." autocomplete="off">
+                    <div class="search-spinner" id="search-spinner" style="display:none;">
+                        <div class="spinner small"></div>
+                    </div>
+                    <button class="search-clear-btn" id="search-clear-btn" style="display:none;" aria-label="Clear search">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+                <button class="search-filters-toggle" id="search-filters-toggle">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                    <span>Filters</span>
+                    <svg class="toggle-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="search-filters" id="search-filters" style="display:none;">
+                    <div class="filter-group">
+                        <label class="filter-label">Boards</label>
+                        <div class="board-filter-chips" id="board-filter-chips">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Date Range</label>
+                        <div class="date-filter-row">
+                            <input type="month" id="date-from" class="date-input" placeholder="From">
+                            <span class="date-separator">—</span>
+                            <input type="month" id="date-to" class="date-input" placeholder="To">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Results (replaces board list when active) -->
+            <div class="search-results-panel" id="search-results-panel" style="display:none;">
+                <div class="search-results-header" id="search-results-header"></div>
+                <div class="search-results-list" id="search-results-list"></div>
+            </div>
+
             <!-- Board Selector -->
             <div class="board-selector" id="board-selector">
                 <h3 class="section-title">

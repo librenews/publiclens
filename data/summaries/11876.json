@@ -1,0 +1,55 @@
+{
+  "executive_summary": "The Stanford Fire Commission Special Meeting on July 6, 2022, focused primarily on the settlement of the Dingell versus Stanford litigation. The meeting included a detailed briefing on the terms of the settlement agreement, which involved conducting a round of promotions for fire department positions based on a 2017 eligibility list. The settlement introduced a neutral monitor to oversee the promotion process to ensure compliance with the agreement and transparency. The meeting also included a presentation by a testing consultant on the job analysis and examination process for the promotions.",
+  "key_topics": [
+    {
+      "topic": "Settlement of Dingell vs. Stanford",
+      "summary": "The commission was briefed on the final settlement agreement, which includes conducting promotions based on a 2017 eligibility list with oversight by a neutral monitor.",
+      "timestamp_start": 120
+    },
+    {
+      "topic": "Role of Dr. Jason Kramer",
+      "summary": "Dr. Jason Kramer will serve as a neutral monitor to ensure compliance with the settlement terms during the promotion process.",
+      "timestamp_start": 1800
+    },
+    {
+      "topic": "Testing Consultant Presentation",
+      "summary": "Roger McMillan from Morris & McDaniel explained the job analysis and examination process used to assess candidates for promotion.",
+      "timestamp_start": 7200
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Cancel the July 12th Fire Commission meeting",
+      "outcome": "Tentatively agreed, pending further need",
+      "vote_count": "No formal vote recorded"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Develop standardized interview questions",
+      "responsible_party": "Al Cava and Chief Lorenz",
+      "deadline": "Before July 14th"
+    },
+    {
+      "item": "Confirm eligibility list adjustments",
+      "responsible_party": "Al Cava",
+      "deadline": "By next morning"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "We have agreed that he will have the authority to, during this process, to alert the chair and to alert Chief Lorenz to any issues that violate, that he believes violate, the charter, the classified service rules, or the agreement with the plaintiffs.",
+      "speaker": "Doug Delaney",
+      "context": "Explaining the role of Dr. Jason Kramer as a neutral monitor"
+    },
+    {
+      "quote": "The candidates will also have the opportunity to present things that, you know, that are relevant with regard to the items that I just described, and those factors that I just described, that's also part of the classified service rules.",
+      "speaker": "Doug Delaney",
+      "context": "Discussing the factors considered in the promotion process"
+    }
+  ],
+  "meeting_name": "Fire Commission Special Meeting",
+  "meeting_date": "Jul  6, 2022",
+  "clip_id": "11876"
+}

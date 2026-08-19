@@ -1,0 +1,50 @@
+{
+  "executive_summary": "The Camera Review Committee meeting on September 17, 2025, focused on voting and discussing public safety technology initiatives. Item five was approved unanimously, and updates were provided on the expansion of the city's public safety camera network and the introduction of a new drone as a first responder program. The meeting emphasized the importance of methodical growth in public safety technology to ensure effectiveness and sustainability.",
+  "key_topics": [
+    {
+      "topic": "Approval of Item Five",
+      "summary": "The committee voted to approve item five, which was discussed in the executive session.",
+      "timestamp_start": 0
+    },
+    {
+      "topic": "Public Safety Technology Update",
+      "summary": "Discussion on the expansion of public safety camera technologies and the importance of maintaining and upgrading equipment.",
+      "timestamp_start": 300
+    },
+    {
+      "topic": "Drone as First Responder Program",
+      "summary": "Introduction of a new drone program aimed at enhancing response times and coverage for public safety incidents.",
+      "timestamp_start": 1200
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of item five",
+      "outcome": "Passed",
+      "vote_count": "unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Launch of the drone as a first responder program",
+      "responsible_party": "Public Safety Department",
+      "deadline": "First week of October 2025"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "Public safety technology remains one of our main priorities as an administration.",
+      "speaker": "Public Safety Director",
+      "context": "Discussing the importance of technology in public safety"
+    },
+    {
+      "quote": "It's really a force multiplier, especially when we have...our plan to expand that coastline camera coverage.",
+      "speaker": "Public Safety Director",
+      "context": "Explaining the benefits of the new drone program"
+    }
+  ],
+  "meeting_name": "2025-09-17 - Camera Review Committee 2",
+  "meeting_date": "Sep 17, 2025",
+  "clip_id": "15347"
+}

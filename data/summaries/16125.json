@@ -1,0 +1,80 @@
+{
+  "executive_summary": "The Environmental Protection Board (EPB) of the City of Stamford held its regular meeting on July 16, 2026, via Zoom. The meeting focused on reviewing and approving minutes from previous meetings, discussing new applications, and addressing enforcement and other business matters. Key decisions included approving several applications and deferring others pending further information. The board also discussed the need for external consultation on vernal pool studies and considered waiving application fees under specific conditions.",
+  "key_topics": [
+    {
+      "topic": "Approval of Minutes",
+      "summary": "The board reviewed and approved the minutes from the May 21 and June 18 meetings.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "New Applications",
+      "summary": "The board accepted three new applications for review and discussed the potential need for public hearings and external consultations.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Enforcement and Other Business",
+      "summary": "The board discussed ongoing enforcement issues and other business, including a request for an extension on a deer fence removal order.",
+      "timestamp_start": null
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of May 21 and June 18 meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Acceptance of new applications 2026-21, 2026-22, and 2026-23",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of application 2026-12 with conditions",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Deferral of application 2026-19 pending further information",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Granting a 60-day extension for deer fence removal at 161 North Stamford Road",
+      "outcome": "Consensus",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Review and update the mitigation planting guidelines",
+      "responsible_party": "Mr. Clousey",
+      "deadline": "September meeting"
+    },
+    {
+      "item": "Arrange for external consultation on vernal pool study",
+      "responsible_party": "Mr. Clousey",
+      "deadline": null
+    },
+    {
+      "item": "Communicate extension decision to property owner at 161 North Stamford Road",
+      "responsible_party": "Mr. Clousey",
+      "deadline": null
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "If we do get to the point where we have a motion for approval, if you would help with that wording.",
+      "speaker": "Mr. Romas",
+      "context": "During the discussion on application 2026-12"
+    },
+    {
+      "quote": "See you in September.",
+      "speaker": "Chairman Stone",
+      "context": "Closing remarks of the meeting"
+    }
+  ],
+  "meeting_name": "EPB Regular Meeting - July 16, 2026",
+  "meeting_date": "Jul 16, 2026",
+  "clip_id": "16125"
+}

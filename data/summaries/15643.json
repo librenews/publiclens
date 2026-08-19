@@ -1,0 +1,75 @@
+{
+  "executive_summary": "The Health Commission Monthly Board Meeting focused on several key issues, including the approval of previous meeting minutes, the success and potential budgetary challenges of the Welcome Center, and updates on various health initiatives. The Welcome Center's distribution of jackets and toys was highlighted, alongside concerns about its future funding. The meeting also addressed the importance of maintaining immunization schedules in light of recent changes in recommendations, and the ongoing accreditation process for the health department. The meeting concluded with discussions on future meeting formats and potential in-person gatherings.",
+  "key_topics": [
+    {
+      "topic": "Approval of November 2025 Minutes",
+      "summary": "The minutes from the November 2025 meeting were approved unanimously.",
+      "timestamp_start": 30
+    },
+    {
+      "topic": "Welcome Center Updates",
+      "summary": "The Welcome Center successfully distributed over 500 jackets and numerous toys during December, but faces potential budget cuts.",
+      "timestamp_start": 120
+    },
+    {
+      "topic": "Budget Concerns",
+      "summary": "There are concerns about the new budget impacting the Welcome Center and other programs, with discussions on advocacy strategies.",
+      "timestamp_start": 600
+    },
+    {
+      "topic": "Immunization Schedule Changes",
+      "summary": "Discussion on the impact of recent changes in immunization recommendations and the importance of maintaining current schedules in Connecticut.",
+      "timestamp_start": 3600
+    },
+    {
+      "topic": "Accreditation Process",
+      "summary": "The health department's accreditation process was reviewed, with a decision expected in February.",
+      "timestamp_start": 7200
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of November 2025 meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of the 2026 meeting calendar",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Prepare a summary impact statement for the Welcome Center",
+      "responsible_party": "Juan",
+      "deadline": null
+    },
+    {
+      "item": "Organize informational workshops on immunization",
+      "responsible_party": "Jody",
+      "deadline": "February 9, 2026"
+    },
+    {
+      "item": "Transition to Microsoft Teams for future meetings",
+      "responsible_party": "Raquel",
+      "deadline": "Next meeting"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "This feeling of giving to the community was really, really remarkable during Christmas.",
+      "speaker": "Juan",
+      "context": "Discussing the distribution of jackets and toys at the Welcome Center."
+    },
+    {
+      "quote": "We can't lose it now that we have it.",
+      "speaker": "Lorraine",
+      "context": "Expressing concern about potential budget cuts affecting the Welcome Center."
+    }
+  ],
+  "meeting_name": "Health Commission Monthly Board Meeting",
+  "meeting_date": "Jan 21, 2026",
+  "clip_id": "15643"
+}

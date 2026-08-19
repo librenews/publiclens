@@ -1,0 +1,38 @@
+{
+  "executive_summary": "The municipal government meeting focused on the selection of sergeant candidates for the police department. The meeting involved interviewing nine candidates and resulted in the selection of Detective Gabb as the top candidate. Officer Baines was also promoted to sergeant. The meeting concluded with no further business discussed.",
+  "key_topics": [
+    {
+      "topic": "Sergeant Candidate Interviews",
+      "summary": "Nine sergeant candidates were interviewed during the meeting.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Selection of Detective Gabb",
+      "summary": "Detective Gabb was selected as the top sergeant candidate.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Promotion of Officer Baines",
+      "summary": "Officer Baines was promoted to sergeant.",
+      "timestamp_start": null
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Selection of Detective Gabb as the top sergeant candidate",
+      "outcome": "Passed",
+      "vote_count": "unanimous"
+    },
+    {
+      "description": "Promotion of Officer Baines to sergeant",
+      "outcome": "Passed",
+      "vote_count": "unanimous"
+    }
+  ],
+  "action_items": [],
+  "public_comments": [],
+  "notable_quotes": [],
+  "meeting_name": "July 22, 2026",
+  "meeting_date": "Jul 23, 2026",
+  "clip_id": "16137"
+}

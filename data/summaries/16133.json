@@ -1,0 +1,85 @@
+{
+  "executive_summary": "The SHMC-SSMC meeting on July 21, 2026, covered a range of topics including zoning verbiage concerning water-dependent uses, the Port Authority grant, and the Shellfish Commission charter. The meeting also addressed safety concerns in the harbor, particularly regarding small craft and personal watercraft, and discussed the impact of the upcoming hurricane barrier closure on local businesses. Several votes were taken on applications and proposals, and action items were assigned to various members.",
+  "key_topics": [
+    {
+      "topic": "Zoning Verbiage Concerning Water-Dependent Uses",
+      "summary": "Discussion focused on defining water-dependent uses and ensuring zoning changes do not diminish public access.",
+      "timestamp_start": 720
+    },
+    {
+      "topic": "Port Authority Grant",
+      "summary": "Efforts to facilitate the acceptance of a Port Authority grant were discussed, with a focus on timing and procedural steps.",
+      "timestamp_start": 4200
+    },
+    {
+      "topic": "Shellfish Commission Charter",
+      "summary": "The commission discussed the need to formalize the Shellfish Commission's role and responsibilities through an ordinance.",
+      "timestamp_start": 7200
+    },
+    {
+      "topic": "Safety Concerns in the Harbor",
+      "summary": "Concerns about small craft and personal watercraft safety were raised, with suggestions for better communication and enforcement.",
+      "timestamp_start": 10800
+    },
+    {
+      "topic": "Hurricane Barrier Closure",
+      "summary": "The impact of the upcoming hurricane barrier closure on local businesses was discussed, with a focus on potential fee adjustments.",
+      "timestamp_start": 14400
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of previous meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Finding of no objection for pre-submission plans for 78 Ocean Drive East",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Finding of consistency for zoning map and text changes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Finding of consistency for CSPR 1235 with stormwater improvements",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Reach out to Director Blessing regarding zoning verbiage",
+      "responsible_party": "Dr. Damien Ortelli",
+      "deadline": "Before next meeting"
+    },
+    {
+      "item": "Draft a letter of commendation for firefighter Steve Walsh",
+      "responsible_party": "Dr. Joe Graham",
+      "deadline": "Next meeting"
+    },
+    {
+      "item": "Investigate the process for installing speed markers in the harbor",
+      "responsible_party": "Safety Committee",
+      "deadline": "Ongoing"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "You can't legislate common sense.",
+      "speaker": "Sergeant Fitzgibbon",
+      "context": "Discussing the challenges of enforcing safe boating practices"
+    },
+    {
+      "quote": "We need to keep these kids out of the channel.",
+      "speaker": "Frank Fumega",
+      "context": "Addressing safety concerns with youth sailing programs"
+    }
+  ],
+  "meeting_name": "SHMC-SSMC Scheduled Meeting",
+  "meeting_date": "Jul 21, 2026",
+  "clip_id": "16133"
+}

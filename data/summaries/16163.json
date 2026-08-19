@@ -1,0 +1,66 @@
+{
+  "executive_summary": "The HPAC Regular Meeting on August 4, 2026, covered several key topics including the approval of previous meeting minutes, updates on new and old business, and discussions on zoning board applications. The meeting also addressed the cultural resource inventory and the design of plaques for historic sites. Public comments were made regarding zoning changes and their potential impact on historic properties. The meeting concluded with a discussion on the implications of a proposed zoning map change in the Pacific Street area.",
+  "key_topics": [
+    {
+      "topic": "Approval of Previous Meeting Minutes",
+      "summary": "The minutes from the July 7th meeting were approved without any changes.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Cultural Resource Inventory and Plaque Design",
+      "summary": "Discussion on the design and cost of plaques for historic sites, with suggestions to involve a marketing firm for design input.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Zoning Board Applications",
+      "summary": "Reviewed three zoning board applications for changes to properties over 50 years old, with no significant objections raised.",
+      "timestamp_start": null
+    },
+    {
+      "topic": "Proposed Zoning Map Change",
+      "summary": "Discussion on the potential impact of a proposed zoning map change in the Pacific Street area, with concerns about parking and historic property preservation.",
+      "timestamp_start": null
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of July 7th meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Complete and send out the proposal for the HPAC brochure and plaque design",
+      "responsible_party": "Kendall",
+      "deadline": "Within the next week or so"
+    },
+    {
+      "item": "Investigate the possibility of using 'historic place' instead of 'cultural resource inventory' on plaques",
+      "responsible_party": "Kendall",
+      "deadline": null
+    }
+  ],
+  "public_comments": [
+    {
+      "speaker": "Sue",
+      "topic": "Proposed Zoning Map Change",
+      "summary": "Expressed concerns about the impact of zoning changes on historic properties and neighborhood parking."
+    },
+    {
+      "speaker": "Mr. Adams",
+      "topic": "Plaque Design",
+      "summary": "Suggested using the term 'place' to emphasize emotional attachment to historic sites."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "quote": "Place is better at capitalizing on the emotional attachment than historic site or historic structure.",
+      "speaker": "Mr. Adams",
+      "context": "During the discussion on plaque design terminology."
+    }
+  ],
+  "meeting_name": "HPAC Regular Meeting",
+  "meeting_date": "Aug  4, 2026",
+  "clip_id": "16163"
+}

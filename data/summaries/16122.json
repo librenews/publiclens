@@ -1,0 +1,81 @@
+{
+  "executive_summary": "The Parks & Recreation Commission meeting on July 15, 2026, focused primarily on the public hearing for the Cummings Park playground renovation project. The meeting included a detailed presentation on the proposed design, followed by questions and discussions from commissioners and public comments. Key concerns raised included the use of poured-in-place rubber surfaces, potential flooding issues, and the need for more shade. The meeting also addressed several special event applications for upcoming community activities in various parks.",
+  "key_topics": [
+    {
+      "topic": "Cummings Park Playground Renovation",
+      "summary": "A public hearing was held to discuss the proposed design for the Cummings Park playground renovation, including concerns about materials, flooding, and shade.",
+      "timestamp_start": 120
+    },
+    {
+      "topic": "Special Event Applications",
+      "summary": "The commission reviewed and approved several special event applications, including a block party, a gym field day, and a children's entrepreneurship market.",
+      "timestamp_start": 7200
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of West Side Neighborhood Block Party",
+      "outcome": "Passed",
+      "vote_count": "3-0"
+    },
+    {
+      "description": "Approval of Catalyst Gym Field Day",
+      "outcome": "Passed",
+      "vote_count": "3-0"
+    },
+    {
+      "description": "Approval of Stanford Kids Learning and Innovation Entrepreneurship Market",
+      "outcome": "Passed",
+      "vote_count": "3-0"
+    },
+    {
+      "description": "Approval of H2 Capital Partners Event",
+      "outcome": "Passed",
+      "vote_count": "3-0"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Follow-up on Cummings Park playground design concerns",
+      "responsible_party": "Commissioners",
+      "deadline": "Next meeting in August"
+    },
+    {
+      "item": "Ensure event locations are available and confirmed",
+      "responsible_party": "Event organizers and Parks Department",
+      "deadline": "Before event dates"
+    }
+  ],
+  "public_comments": [
+    {
+      "speaker": "Dave Adams",
+      "topic": "Cummings Park playground renovation",
+      "summary": "Expressed concerns about flooding and the use of rubber surfaces, suggesting the project be reconsidered."
+    },
+    {
+      "speaker": "Maureen Boylan",
+      "topic": "Cummings Park playground renovation",
+      "summary": "Opposed the project due to safety concerns with the tower and the use of metal slides and rubber surfaces."
+    },
+    {
+      "speaker": "Stephen Schor",
+      "topic": "Cummings Park playground renovation",
+      "summary": "Suggested the use of shade sails and expressed concerns about the environmental impact of the rubber surfaces."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "quote": "Kids will be roasting.",
+      "speaker": "Stephen Schor",
+      "context": "Expressing concern about the lack of shade in the playground design."
+    },
+    {
+      "quote": "We are trying to create a more dynamic topography.",
+      "speaker": "Eris Ellis",
+      "context": "Describing the design features of the proposed playground."
+    }
+  ],
+  "meeting_name": "Parks & Recreation Commission Regular Meeting & Public Hearing",
+  "meeting_date": "Jul 15, 2026",
+  "clip_id": "16122"
+}

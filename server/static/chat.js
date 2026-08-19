@@ -8,6 +8,12 @@ let activeClipId = null;
 let activeBoard = null;
 let hlsInstance = null;
 
+// Search state
+let searchAbortController = null;
+let searchDebounceTimer = null;
+let searchActiveViewIds = new Set();  // empty = all boards
+let allBoardsData = [];  // cached board list for filters
+
 // ─── DOM Elements ───
 
 const chatMessages = document.getElementById('chat-messages');
@@ -79,6 +85,47 @@ function setupEventListeners() {
             videoEl.pause();
         }
     });
+
+    // Search — debounced input
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', () => {
+        clearTimeout(searchDebounceTimer);
+        const query = searchInput.value.trim();
+
+        if (!query) {
+            clearSearch();
+            return;
+        }
+
+        document.getElementById('search-clear-btn').style.display = 'flex';
+        searchDebounceTimer = setTimeout(() => performSearch(query), 300);
+    });
+
+    // Search — clear button
+    document.getElementById('search-clear-btn').addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearch();
+        searchInput.focus();
+    });
+
+    // Search — filters toggle
+    document.getElementById('search-filters-toggle').addEventListener('click', () => {
+        const filtersEl = document.getElementById('search-filters');
+        const toggleBtn = document.getElementById('search-filters-toggle');
+        const isVisible = filtersEl.style.display !== 'none';
+        filtersEl.style.display = isVisible ? 'none' : 'block';
+        toggleBtn.classList.toggle('active', !isVisible);
+    });
+
+    // Search — date filter changes trigger re-search
+    document.getElementById('date-from').addEventListener('change', () => {
+        const query = searchInput.value.trim();
+        if (query) performSearch(query);
+    });
+    document.getElementById('date-to').addEventListener('change', () => {
+        const query = searchInput.value.trim();
+        if (query) performSearch(query);
+    });
 }
 
 // ─── Board & Meeting Selection ───
@@ -87,6 +134,9 @@ async function loadBoards() {
     try {
         const resp = await fetch(`${API_BASE}/api/boards`);
         const boards = await resp.json();
+
+        // Cache for search filters
+        allBoardsData = boards;
 
         const boardList = document.getElementById('board-list');
 
@@ -107,6 +157,15 @@ async function loadBoards() {
                 <span class="board-item-count">${b.processed_count}</span>
             </button>
         `).join('');
+
+        // Populate search filter chips
+        const chipsContainer = document.getElementById('board-filter-chips');
+        chipsContainer.innerHTML = boards.map(b => `
+            <button class="board-filter-chip" data-view-id="${b.view_id}" onclick="toggleBoardFilter('${b.view_id}', this)">
+                <span class="chip-dot" style="background:${b.color}"></span>
+                ${b.short_name}
+            </button>
+        `).join('');
     } catch (err) {
         console.error('Failed to load boards:', err);
     }
@@ -119,6 +178,7 @@ async function showMeetings(boardData) {
     boardSelector.style.display = 'none';
     meetingInfo.style.display = 'none';
     meetingSelector.style.display = 'block';
+    document.getElementById('search-results-panel').style.display = 'none';
 
     document.getElementById('meetings-board-name').textContent = boardData.name;
     const dot = document.getElementById('meetings-board-dot');
@@ -156,6 +216,202 @@ function showBoards() {
     boardSelector.style.display = 'block';
     meetingSelector.style.display = 'none';
     meetingInfo.style.display = 'none';
+    document.getElementById('search-results-panel').style.display = 'none';
+}
+
+// ─── Cross-Meeting Search ───
+
+async function performSearch(query) {
+    // Abort any in-flight search
+    if (searchAbortController) {
+        searchAbortController.abort();
+    }
+    searchAbortController = new AbortController();
+
+    const spinner = document.getElementById('search-spinner');
+    const clearBtn = document.getElementById('search-clear-btn');
+    spinner.style.display = 'flex';
+    clearBtn.style.display = 'none';
+
+    // Build filter params
+    const viewIds = searchActiveViewIds.size > 0
+        ? Array.from(searchActiveViewIds)
+        : null;  // null = all boards
+
+    const dateFromEl = document.getElementById('date-from');
+    const dateToEl = document.getElementById('date-to');
+    let dateFrom = null;
+    let dateTo = null;
+
+    if (dateFromEl.value) {
+        // month input gives "YYYY-MM" — convert to unix timestamp (start of month)
+        dateFrom = Math.floor(new Date(dateFromEl.value + '-01').getTime() / 1000);
+    }
+    if (dateToEl.value) {
+        // End of the selected month
+        const d = new Date(dateToEl.value + '-01');
+        d.setMonth(d.getMonth() + 1);
+        dateTo = Math.floor(d.getTime() / 1000);
+    }
+
+    try {
+        const resp = await fetch(`${API_BASE}/api/search`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                query,
+                view_ids: viewIds,
+                date_from: dateFrom,
+                date_to: dateTo,
+                top_k: 12,
+            }),
+            signal: searchAbortController.signal,
+        });
+
+        if (!resp.ok) {
+            const err = await resp.json();
+            throw new Error(err.error || 'Search failed');
+        }
+
+        const data = await resp.json();
+        renderSearchResults(data, query);
+    } catch (err) {
+        if (err.name === 'AbortError') return;  // cancelled, ignore
+        console.error('Search error:', err);
+        const resultsList = document.getElementById('search-results-list');
+        resultsList.innerHTML = `<div class="search-no-results"><p>Search error: ${escapeHtml(err.message)}</p></div>`;
+    } finally {
+        spinner.style.display = 'none';
+        if (document.getElementById('search-input').value.trim()) {
+            clearBtn.style.display = 'flex';
+        }
+    }
+}
+
+function renderSearchResults(data, query) {
+    const resultsPanel = document.getElementById('search-results-panel');
+    const resultsHeader = document.getElementById('search-results-header');
+    const resultsList = document.getElementById('search-results-list');
+
+    // Show results panel, hide board/meeting selectors
+    resultsPanel.style.display = 'flex';
+    boardSelector.style.display = 'none';
+    meetingSelector.style.display = 'none';
+    meetingInfo.style.display = 'none';
+
+    const results = data.results || [];
+    const meetingCount = new Set(results.map(r => r.clip_id)).size;
+
+    if (results.length === 0) {
+        resultsHeader.textContent = `No results found`;
+        resultsList.innerHTML = `
+            <div class="search-no-results">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <p>No matches for "${escapeHtml(query)}"</p>
+                <p style="font-size:11px;margin-top:4px;">Try different keywords or adjust your filters.</p>
+            </div>
+        `;
+        return;
+    }
+
+    resultsHeader.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} across ${meetingCount} meeting${meetingCount !== 1 ? 's' : ''}`;
+
+    // Find max score for relative bar widths
+    const maxScore = Math.max(...results.map(r => r.score));
+
+    resultsList.innerHTML = results.map(r => {
+        const scorePercent = maxScore > 0 ? Math.round((r.score / maxScore) * 100) : 0;
+        const snippet = highlightSnippet(r.text, query);
+        const meetingName = cleanMeetingName(r.meeting_name);
+
+        return `
+            <div class="search-result-card" onclick="selectSearchResult('${r.clip_id}', ${r.start_time || 0}, '${r.view_id}')">
+                <div class="search-result-snippet">${snippet}</div>
+                <div class="search-result-meta">
+                    <div class="search-result-meeting">
+                        <span class="search-result-badge">
+                            <span class="badge-dot" style="background:${r.board_color}"></span>
+                            ${escapeHtml(r.board_short_name)}
+                        </span>
+                        <span class="search-result-date">${escapeHtml(r.meeting_date)}</span>
+                    </div>
+                    <span class="search-result-timestamp">▶ ${escapeHtml(r.timestamp)}</span>
+                </div>
+                <div class="search-result-score-bar">
+                    <div class="search-result-score-fill" style="width:${scorePercent}%"></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function highlightSnippet(text, query) {
+    const escaped = escapeHtml(text);
+    if (!query) return escaped;
+
+    // Highlight each word of the query in the snippet
+    const words = query.split(/\s+/).filter(w => w.length > 2);
+    let result = escaped;
+    for (const word of words) {
+        const regex = new RegExp(`(${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        result = result.replace(regex, '<mark>$1</mark>');
+    }
+    return result;
+}
+
+function toggleBoardFilter(viewId, chipEl) {
+    chipEl.classList.toggle('active');
+
+    if (searchActiveViewIds.has(viewId)) {
+        searchActiveViewIds.delete(viewId);
+    } else {
+        searchActiveViewIds.add(viewId);
+    }
+
+    // Re-run search if there's a query
+    const query = document.getElementById('search-input').value.trim();
+    if (query) performSearch(query);
+}
+
+function clearSearch() {
+    // Cancel pending requests
+    if (searchAbortController) {
+        searchAbortController.abort();
+        searchAbortController = null;
+    }
+    clearTimeout(searchDebounceTimer);
+
+    // Reset UI
+    document.getElementById('search-clear-btn').style.display = 'none';
+    document.getElementById('search-spinner').style.display = 'none';
+    document.getElementById('search-results-panel').style.display = 'none';
+
+    // Show the appropriate sidebar panel
+    if (meetingInfo.style.display !== 'none') {
+        // Leave meeting info showing
+    } else if (meetingSelector.style.display !== 'none') {
+        // Leave meeting selector showing
+    } else {
+        boardSelector.style.display = 'block';
+    }
+}
+
+async function selectSearchResult(clipId, startTime, viewId) {
+    // Find board data for this result
+    const board = allBoardsData.find(b => b.view_id === viewId);
+    if (board) {
+        activeBoard = board;
+    }
+
+    // Navigate to the meeting (reuses existing selectMeeting)
+    await selectMeeting(clipId);
+
+    // Seek video to the relevant timestamp
+    if (startTime > 0) {
+        setTimeout(() => seekVideo(startTime), 500);
+    }
 }
 
 async function selectMeeting(clipId) {

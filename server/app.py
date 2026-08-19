@@ -21,6 +21,7 @@ load_dotenv()
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from server.rag import chat, load_meeting_data
+from pipeline.indexer import search_across_meetings, format_timestamp
 from pipeline.boards import BOARDS, get_board_by_view_id
 
 app = Flask(__name__, static_folder="static")
@@ -140,6 +141,55 @@ def chat_endpoint():
             conversation_history=history,
         )
         return jsonify(result)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/search", methods=["POST"])
+def search_endpoint():
+    """Search across multiple meetings with optional board and date filters."""
+    body = request.get_json()
+
+    if not body or "query" not in body:
+        return jsonify({"error": "Missing 'query' in request body"}), 400
+
+    query = body["query"].strip()
+    if not query:
+        return jsonify({"error": "Empty query"}), 400
+
+    view_ids = body.get("view_ids")  # list of strings, or None for all
+    date_from = body.get("date_from")  # unix timestamp, or None
+    date_to = body.get("date_to")  # unix timestamp, or None
+    top_k = body.get("top_k", 10)
+
+    try:
+        data = search_across_meetings(
+            query=query,
+            view_ids=view_ids,
+            date_from=date_from,
+            date_to=date_to,
+            top_k=top_k,
+        )
+
+        # Enrich results with board metadata and formatted timestamps
+        for r in data["results"]:
+            board_info = get_board_by_view_id(r.get("view_id", ""))
+            r["board_name"] = board_info["name"] if board_info else "Unknown"
+            r["board_short_name"] = board_info["short_name"] if board_info else "?"
+            r["board_color"] = board_info["color"] if board_info else "#666"
+            r["timestamp"] = format_timestamp(r.get("start_time"))
+            r["timestamp_end"] = format_timestamp(r.get("end_time"))
+            # Truncate text for response
+            r["text"] = r["text"][:300] + ("..." if len(r["text"]) > 300 else "")
+
+        data["query"] = query
+        data["filters"] = {
+            "view_ids": view_ids,
+            "date_from": date_from,
+            "date_to": date_to,
+        }
+
+        return jsonify(data)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
