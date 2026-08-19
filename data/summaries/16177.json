@@ -1,0 +1,80 @@
+{
+  "executive_summary": "The Board of Finance meeting on August 12, 2026, covered a variety of topics including approval of previous meeting minutes, discussions on city contracts, and updates on major school construction projects. Key decisions included the approval of employment contracts for various Clerk of the Works positions, additional appropriations for state and federal grants, and significant funding for the Roxbury school replacement project. The meeting also featured an update on the progress of the city's annual financial report and a discussion on the West Broad Street Bridge rehabilitation project.",
+  "key_topics": [
+    {
+      "topic": "Approval of Previous Meeting Minutes",
+      "summary": "The board approved the minutes from the July 9th and July 24th meetings unanimously.",
+      "timestamp_start": 300
+    },
+    {
+      "topic": "Graviton Consulting Agreement",
+      "summary": "The board discussed and approved an agreement with Graviton Consulting for Oracle ERP support, highlighting cost savings compared to Oracle Consulting Services.",
+      "timestamp_start": 900
+    },
+    {
+      "topic": "West Hill and Roxbury School Construction Updates",
+      "summary": "Updates were provided on the progress of the West Hill and Roxbury school construction projects, including timelines and financials.",
+      "timestamp_start": 10800
+    },
+    {
+      "topic": "Roxbury School Replacement Project Funding",
+      "summary": "The board approved additional funding for the Roxbury school replacement project, with conditions on approving the final GMP.",
+      "timestamp_start": 12600
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of previous meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of Graviton Consulting Agreement",
+      "outcome": "Passed",
+      "vote_count": "4-0"
+    },
+    {
+      "description": "Approval of employment contracts for Clerk of the Works positions",
+      "outcome": "Passed",
+      "vote_count": "5-0"
+    },
+    {
+      "description": "Approval of additional appropriations for state and federal grants",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of Roxbury school replacement project funding with condition",
+      "outcome": "Passed",
+      "vote_count": "5-0"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Submit final draft of the fiscal 25 ACFR",
+      "responsible_party": "City's financial team",
+      "deadline": "August 14, 2026"
+    },
+    {
+      "item": "Prepare for Roxbury school project bidding",
+      "responsible_party": "School construction team",
+      "deadline": "End of August 2026"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "We are hopeful that at some point we'll also be able to embark on these two modules being built.",
+      "speaker": "Prasant",
+      "context": "Discussing the potential future work with Graviton Consulting."
+    },
+    {
+      "quote": "This is part of that step to make that better.",
+      "speaker": "Tom",
+      "context": "Referring to the hiring of a Clerk of the Works to improve utility trench oversight."
+    }
+  ],
+  "meeting_name": "08122026 BOF Regular Monthly Meeting",
+  "meeting_date": "Aug 12, 2026",
+  "clip_id": "16177"
+}

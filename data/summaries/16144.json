@@ -1,0 +1,50 @@
+{
+  "executive_summary": "The Board of Finance held a special meeting to discuss the Yearwood Renovation Project and the reallocation of funds from various sources, including ARP funding and Hurricane Sandy reimbursements. The meeting focused on addressing the project's budget needs without resorting to additional city bonds. The board approved the funding request while also planning to clarify the accounting of the Hurricane Sandy reimbursements.",
+  "key_topics": [
+    {
+      "topic": "Yearwood Renovation Project Funding",
+      "summary": "The board discussed the need for additional funding for the Yearwood Renovation Project, totaling $2.2 million, sourced from ARP, Community Development Fund, and DRA funding.",
+      "timestamp_start": 120
+    },
+    {
+      "topic": "Hurricane Sandy Reimbursements",
+      "summary": "The board explored the accounting implications of using Hurricane Sandy reimbursements for the Yearwood project and agreed to verify the original funding source.",
+      "timestamp_start": 3600
+    },
+    {
+      "topic": "Project Timeline and Displacement Issues",
+      "summary": "The board emphasized the importance of completing the project by December 2026 to allow the Boys and Girls Club to return to the Yearwood Center.",
+      "timestamp_start": 5400
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of additional funding for the Yearwood Renovation Project",
+      "outcome": "Passed",
+      "vote_count": "unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Verify the original funding source for Hurricane Sandy reimbursements",
+      "responsible_party": "Matt and Tony Romano",
+      "deadline": "Before the next board meeting"
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "We don't want to see this come back again.",
+      "speaker": "Mary Lou Rinaldi",
+      "context": "Emphasizing the need to finalize the Yearwood Renovation Project funding."
+    },
+    {
+      "quote": "We have the money either way. The question is should it be assigned back to pay off some FEMA obligation.",
+      "speaker": "Richard Friedman",
+      "context": "Discussing the accounting of Hurricane Sandy reimbursements."
+    }
+  ],
+  "meeting_name": "07242026 BOF Special Meeting",
+  "meeting_date": "Jul 24, 2026",
+  "clip_id": "16144"
+}

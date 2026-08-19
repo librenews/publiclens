@@ -1,0 +1,80 @@
+{
+  "executive_summary": "The BOR Fiscal Committee meeting on July 27, 2026, focused on several key fiscal matters, including agreements and appropriations related to city projects and services. The committee approved additional appropriations for the Youth Services Bureau and state-certified fire training programs. Discussions also included the rejection of capital project closeouts and the approval of funding for the Yerwood Center renovations. An executive session was held to discuss the municipal tax services program, resulting in a suggestion to pursue an RFP with capital tax services.",
+  "key_topics": [
+    {
+      "topic": "Approval of Agreement with Graviton Consulting Services",
+      "summary": "The committee discussed the approval of an agreement with Graviton Consulting Services for ERP program support, but no motion was made.",
+      "timestamp_start": 60
+    },
+    {
+      "topic": "Approval of Contract with Forum Consulting Services",
+      "summary": "The committee reviewed a contract with Forum Consulting Services for staffing information security analysts, but no action was taken.",
+      "timestamp_start": 120
+    },
+    {
+      "topic": "Youth Services Bureau Additional Appropriation",
+      "summary": "The committee approved an additional appropriation of $50,000 for the Mayor's Youth Employment Program.",
+      "timestamp_start": 180
+    },
+    {
+      "topic": "State-Certified Fire Training Appropriation",
+      "summary": "An additional appropriation of $57,054 was approved for fire training and professional development programs.",
+      "timestamp_start": 240
+    },
+    {
+      "topic": "Municipal Tax Services Review",
+      "summary": "The committee planned to discuss the municipal tax services program but postponed due to absent participants.",
+      "timestamp_start": 300
+    },
+    {
+      "topic": "Yerwood Center Renovations Funding",
+      "summary": "The committee discussed and approved funding for the Yerwood Center renovations, including reallocating ARP funds.",
+      "timestamp_start": 360
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of additional appropriation for the Youth Services Bureau",
+      "outcome": "Passed",
+      "vote_count": "7-0-0"
+    },
+    {
+      "description": "Approval of additional appropriation for state-certified fire training",
+      "outcome": "Passed",
+      "vote_count": "7-0-0"
+    },
+    {
+      "description": "Rejection of capital project closeout",
+      "outcome": "No action taken",
+      "vote_count": "N/A"
+    },
+    {
+      "description": "Approval of additional appropriation for Yerwood Center renovations",
+      "outcome": "Passed",
+      "vote_count": "7-0-0"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Pursue an RFP with capital tax services",
+      "responsible_party": "City administration",
+      "deadline": null
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "We identified that this $330,000 roughly will not be expended in these projects.",
+      "speaker": "Tony Romano",
+      "context": "Discussing the reallocation of ARP funds."
+    },
+    {
+      "quote": "The deadline for expending those funds is December 31 of this calendar year.",
+      "speaker": "Matt Kanonis",
+      "context": "Explaining the urgency of using ARP funds for the Yerwood Center project."
+    }
+  ],
+  "meeting_name": "BOR Fiscal Committee Meeting",
+  "meeting_date": "Jul 27, 2026",
+  "clip_id": "16146"
+}

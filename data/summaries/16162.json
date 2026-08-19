@@ -1,0 +1,91 @@
+{
+  "executive_summary": "The BOR Regular Board Meeting on August 3, 2026, addressed various administrative and community issues, including appointments to city boards, fiscal appropriations, and public safety concerns. Key decisions included the approval of contracts and additional appropriations for city projects, as well as the decision to send several ordinances to public hearing. Public comments highlighted issues such as the need for a Conservation Commission and concerns about police conduct.",
+  "key_topics": [
+    {
+      "topic": "Invocation and Roll Call",
+      "summary": "The meeting began with an invocation by Reverend Martha McReid and a roll call confirming a quorum.",
+      "timestamp_start": 0
+    },
+    {
+      "topic": "Appointments Committee Report",
+      "summary": "The committee reported on nine appointments to various city boards, all of which were approved.",
+      "timestamp_start": 600
+    },
+    {
+      "topic": "Fiscal Committee Report",
+      "summary": "The committee discussed several fiscal appropriations and contracts, approving three items on consent.",
+      "timestamp_start": 1200
+    },
+    {
+      "topic": "Public Comments",
+      "summary": "Several members of the public spoke on issues including the establishment of a Conservation Commission and concerns about police conduct.",
+      "timestamp_start": 1800
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of nine appointments to city boards",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval of fiscal appropriations for Youth Services and Fire Training",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Approval to send ordinances to public hearing",
+      "outcome": "Passed",
+      "vote_count": "Unanimous"
+    },
+    {
+      "description": "Rejection of collective bargaining agreement with WPCA",
+      "outcome": "Not Rejected",
+      "vote_count": "Unanimous"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Submit items to the Steering Committee by August 5th",
+      "responsible_party": "Board members",
+      "deadline": "August 5, 2026"
+    },
+    {
+      "item": "Prepare for the next full board meeting",
+      "responsible_party": "Board members",
+      "deadline": "September 8, 2026"
+    }
+  ],
+  "public_comments": [
+    {
+      "speaker": "Kieran Edmondson",
+      "topic": "Fire Training School Funding",
+      "summary": "Urged the board to approve funding assistance for the fire training school to ensure operational readiness."
+    },
+    {
+      "speaker": "Sue",
+      "topic": "Conservation Commission",
+      "summary": "Requested the board to approve a public hearing for the establishment of a Conservation Commission."
+    },
+    {
+      "speaker": "Valerie Giotto",
+      "topic": "Police Conduct",
+      "summary": "Spoke about the death of her son, Stephen Barrier, and demanded accountability and justice from the police department."
+    }
+  ],
+  "notable_quotes": [
+    {
+      "quote": "Let's consult the community for their feedback for a conservation commission and approve a public hearing.",
+      "speaker": "Sue",
+      "context": "During public comments on the need for a Conservation Commission."
+    },
+    {
+      "quote": "Stephen should be alive today. The mayor fails me, the police department fails me.",
+      "speaker": "Valerie Giotto",
+      "context": "Expressing frustration over the handling of her son's death."
+    }
+  ],
+  "meeting_name": "BOR Regular Board Meeting",
+  "meeting_date": "Aug  3, 2026",
+  "clip_id": "16162"
+}

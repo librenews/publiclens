@@ -1,0 +1,75 @@
+{
+  "executive_summary": "The Board of Finance held its regular monthly meeting on June 10, 2026, where they approved previous meeting minutes and received updates on the fiscal 2025 audit progress and pension audits. The board also approved an employment contract for a Diversity, Equity, and Inclusion officer and additional appropriations for state and federal grants. The meeting was efficient, with all items on the agenda addressed and passed unanimously.",
+  "key_topics": [
+    {
+      "topic": "Approval of Meeting Minutes",
+      "summary": "The board approved the minutes from the May 14th regular meeting and the May 18th special budget meeting.",
+      "timestamp_start": 60
+    },
+    {
+      "topic": "Fiscal 2025 Audit Update",
+      "summary": "Teresa Viscarello provided an update on the progress of the fiscal 2025 audit and pension audits, indicating that they are on track for completion by the end of July.",
+      "timestamp_start": 180
+    },
+    {
+      "topic": "DEI Officer Employment Contract",
+      "summary": "The board approved the employment contract for the Diversity, Equity, and Inclusion officer, aligning its term with the mayor's tenure.",
+      "timestamp_start": 900
+    },
+    {
+      "topic": "State Grant Appropriation",
+      "summary": "Anita presented a request for an additional appropriation of $62,566 from a state grant for quality enhancement funding, which was approved.",
+      "timestamp_start": 1260
+    },
+    {
+      "topic": "Federal Grant Appropriation",
+      "summary": "The board approved an additional appropriation of $324,646 for the Stanford Police Department from a federal grant to support the Behavioral Health Unit.",
+      "timestamp_start": 1560
+    }
+  ],
+  "decisions_and_votes": [
+    {
+      "description": "Approval of May 14th and May 18th meeting minutes",
+      "outcome": "Passed",
+      "vote_count": "4-0"
+    },
+    {
+      "description": "Approval of DEI Officer Employment Contract",
+      "outcome": "Passed",
+      "vote_count": "4-0"
+    },
+    {
+      "description": "Approval of additional appropriation for state grant",
+      "outcome": "Passed",
+      "vote_count": "5-0"
+    },
+    {
+      "description": "Approval of additional appropriation for federal grant",
+      "outcome": "Passed",
+      "vote_count": "5-0"
+    }
+  ],
+  "action_items": [
+    {
+      "item": "Find out if the police officer's salary is included in the regular budget or covered by the grant",
+      "responsible_party": "Anita",
+      "deadline": null
+    }
+  ],
+  "public_comments": [],
+  "notable_quotes": [
+    {
+      "quote": "We are still on target for the end of July.",
+      "speaker": "Teresa Viscarello",
+      "context": "Regarding the completion of the fiscal 2025 audit."
+    },
+    {
+      "quote": "Should we do Wednesday meetings all the time?",
+      "speaker": "Board Member",
+      "context": "Commenting on the efficiency of the meeting."
+    }
+  ],
+  "meeting_name": "06102026 BOF Regular Monthly Meeting",
+  "meeting_date": "Jun 10, 2026",
+  "clip_id": "16042"
+}
