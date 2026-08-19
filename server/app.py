@@ -229,6 +229,10 @@ def headlines():
 
         # Decisions & votes — highest value headlines
         for item in summary.get("decisions_and_votes", []):
+            desc = item.get("description", "").lower()
+            # Skip routine minute approvals — happens every meeting
+            if "minutes" in desc and ("approv" in desc or "adopt" in desc):
+                continue
             headlines.append({
                 "type": "decision",
                 "title": item.get("description", ""),
@@ -246,6 +250,9 @@ def headlines():
 
         # Key topics
         for item in summary.get("key_topics", []):
+            topic = item.get("topic", "").lower()
+            if "minutes" in topic and ("approv" in topic or "adopt" in topic):
+                continue
             headlines.append({
                 "type": "topic",
                 "title": item.get("topic", ""),
