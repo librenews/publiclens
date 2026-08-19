@@ -22,7 +22,7 @@ const chatInput = document.getElementById('chat-input');
 const sendBtn = document.getElementById('send-btn');
 const chatInputArea = document.getElementById('chat-input-area');
 const chatHeaderTitle = document.getElementById('chat-header-title');
-const emptyState = document.getElementById('empty-state');
+const headlinesFeed = document.getElementById('headlines-feed');
 const welcomeMessage = document.getElementById('welcome-message');
 const sidebar = document.getElementById('sidebar');
 const sidebarToggle = document.getElementById('sidebar-toggle');
@@ -43,6 +43,7 @@ const videoError = document.getElementById('video-error');
 
 document.addEventListener('DOMContentLoaded', () => {
     loadBoards();
+    loadHeadlines();
     setupEventListeners();
 });
 
@@ -168,6 +169,102 @@ async function loadBoards() {
         `).join('');
     } catch (err) {
         console.error('Failed to load boards:', err);
+    }
+}
+
+async function loadHeadlines() {
+    try {
+        const resp = await fetch(`${API_BASE}/api/headlines`);
+        const headlines = await resp.json();
+
+        const listEl = document.getElementById('headlines-list');
+
+        if (!headlines || headlines.length === 0) {
+            listEl.innerHTML = '<p class="headlines-empty">No meetings processed yet.</p>';
+            return;
+        }
+
+        // Group by meeting (clip_id) to create sections
+        const byMeeting = new Map();
+        for (const h of headlines) {
+            if (!byMeeting.has(h.clip_id)) {
+                byMeeting.set(h.clip_id, {
+                    meeting_name: h.meeting_name,
+                    meeting_date: h.meeting_date,
+                    board_name: h.board_name,
+                    board_short: h.board_short,
+                    board_color: h.board_color,
+                    clip_id: h.clip_id,
+                    date_unix: h.date_unix,
+                    items: [],
+                });
+            }
+            byMeeting.get(h.clip_id).items.push(h);
+        }
+
+        // Sort meetings by date
+        const meetings = [...byMeeting.values()].sort((a, b) => (b.date_unix || 0) - (a.date_unix || 0));
+
+        // Render — show top items from each meeting
+        let html = '';
+        for (const meeting of meetings) {
+            // Take top 3 items per meeting (prioritize decisions)
+            const decisions = meeting.items.filter(i => i.type === 'decision');
+            const topics = meeting.items.filter(i => i.type === 'topic');
+            const quotes = meeting.items.filter(i => i.type === 'quote');
+            const topItems = [...decisions.slice(0, 2), ...topics.slice(0, 2), ...quotes.slice(0, 1)].slice(0, 3);
+
+            html += `
+                <div class="headline-meeting-group">
+                    <div class="headline-meeting-header" onclick="navigateToMeeting('${meeting.clip_id}', '${meeting.board_name}')">
+                        <span class="headline-board-badge" style="background:${meeting.board_color}">${meeting.board_short}</span>
+                        <span class="headline-meeting-name">${escapeHtml(meeting.meeting_name)}</span>
+                        <span class="headline-meeting-date">${escapeHtml(meeting.meeting_date)}</span>
+                    </div>
+                    <div class="headline-items">
+            `;
+
+            for (const item of topItems) {
+                const typeIcon = item.type === 'decision' ? '⚖️' : item.type === 'quote' ? '💬' : '📋';
+                const typeClass = `headline-type-${item.type}`;
+                const typeBadge = item.type === 'decision'
+                    ? `<span class="headline-vote-badge ${item.detail.includes('Passed') ? 'vote-passed' : item.detail.includes('Failed') ? 'vote-failed' : ''}">${escapeHtml(item.detail)}</span>`
+                    : '';
+
+                html += `
+                    <div class="headline-item ${typeClass}" onclick="navigateToMeeting('${item.clip_id}', '${meeting.board_name}')">
+                        <span class="headline-type-icon">${typeIcon}</span>
+                        <div class="headline-content">
+                            <div class="headline-title">${escapeHtml(item.title)}</div>
+                            ${item.type !== 'decision' ? `<div class="headline-detail">${escapeHtml(item.detail)}</div>` : ''}
+                            ${typeBadge}
+                        </div>
+                    </div>
+                `;
+            }
+
+            html += '</div></div>';
+        }
+
+        listEl.innerHTML = html;
+    } catch (err) {
+        console.error('Failed to load headlines:', err);
+        document.getElementById('headlines-list').innerHTML = '<p class="headlines-empty">Could not load headlines.</p>';
+    }
+}
+
+function navigateToMeeting(clipId, boardName) {
+    // Find the board in allBoardsData
+    const board = allBoardsData.find(b => b.name === boardName);
+    if (board) {
+        showMeetings({
+            viewId: board.view_id,
+            name: board.name,
+            short: board.short_name,
+            color: board.color,
+        });
+        // Small delay to let meetings load, then select the meeting
+        setTimeout(() => selectMeeting(clipId), 300);
     }
 }
 
@@ -459,7 +556,7 @@ async function selectMeeting(clipId) {
     }
 
     // Activate chat area
-    emptyState.style.display = 'none';
+    headlinesFeed.style.display = 'none';
     chatInputArea.style.display = 'block';
     chatHeaderTitle.textContent = 'Ask about this meeting';
 

@@ -194,6 +194,96 @@ def search_endpoint():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route("/api/headlines")
+def headlines():
+    """Aggregate top headlines from all processed meetings."""
+    headlines = []
+
+    for summary_file in sorted(DATA_DIR.glob("summaries/*.json")):
+        try:
+            with open(summary_file) as f:
+                summary = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            continue
+
+        clip_id = summary.get("clip_id", summary_file.stem)
+        meeting_name = summary.get("meeting_name", f"Meeting {clip_id}")
+        meeting_date = summary.get("meeting_date", "Unknown")
+
+        # Load meeting metadata for board info and stream URL
+        meta_path = DATA_DIR / f"meeting_{clip_id}.json"
+        view_id = ""
+        stream_url = ""
+        date_unix = 0
+        if meta_path.exists():
+            with open(meta_path) as f:
+                meta = json.load(f)
+            view_id = meta.get("view_id", "")
+            stream_url = meta.get("stream_url", "")
+            date_unix = meta.get("date_unix") or 0
+
+        board_info = get_board_by_view_id(view_id)
+        board_name = board_info["name"] if board_info else "Unknown"
+        board_short = board_info["short_name"] if board_info else "?"
+        board_color = board_info["color"] if board_info else "#666"
+
+        # Decisions & votes — highest value headlines
+        for item in summary.get("decisions_and_votes", []):
+            headlines.append({
+                "type": "decision",
+                "title": item.get("description", ""),
+                "detail": f"{item.get('outcome', '')} ({item.get('vote_count', 'N/A')})",
+                "clip_id": clip_id,
+                "meeting_name": meeting_name,
+                "meeting_date": meeting_date,
+                "date_unix": date_unix,
+                "board_name": board_name,
+                "board_short": board_short,
+                "board_color": board_color,
+                "stream_url": stream_url,
+                "timestamp_start": None,
+            })
+
+        # Key topics
+        for item in summary.get("key_topics", []):
+            headlines.append({
+                "type": "topic",
+                "title": item.get("topic", ""),
+                "detail": item.get("summary", ""),
+                "clip_id": clip_id,
+                "meeting_name": meeting_name,
+                "meeting_date": meeting_date,
+                "date_unix": date_unix,
+                "board_name": board_name,
+                "board_short": board_short,
+                "board_color": board_color,
+                "stream_url": stream_url,
+                "timestamp_start": item.get("timestamp_start"),
+            })
+
+        # Notable quotes (select)
+        for item in summary.get("notable_quotes", [])[:1]:
+            headlines.append({
+                "type": "quote",
+                "title": f'"{item.get("quote", "")}"',
+                "detail": f'— {item.get("speaker", "Unknown")}, {item.get("context", "")}',
+                "clip_id": clip_id,
+                "meeting_name": meeting_name,
+                "meeting_date": meeting_date,
+                "date_unix": date_unix,
+                "board_name": board_name,
+                "board_short": board_short,
+                "board_color": board_color,
+                "stream_url": stream_url,
+                "timestamp_start": None,
+            })
+
+    # Sort by date (newest first)
+    headlines.sort(key=lambda h: h.get("date_unix") or 0, reverse=True)
+
+    return jsonify(headlines)
+
+
 if __name__ == "__main__":
     import argparse
 
